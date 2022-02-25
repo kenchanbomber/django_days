@@ -10,7 +10,7 @@
                 <h1 class="border-bottom display-6 pb-1 fw-bold">{{ post.title }}</h1>
                 <date class="text-dark">{{ post.date }}</date>
             </div>
-            <div>{{ post.content }}</div>
+            <div>{{ post.get_html_from_markdown|safe }}</div>
         </main>
         <section id="featured-posts" class="container mt-4 mb-4 m-md-0 col-md-4">
             <h2 class="mb-2 text-center">Other Days</h2>
