@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}Django Days{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+        {% block css_files %} {% endblock css_files %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="{% url 'home' %}"
+                    >Django Days</a
+                >
+                <ul class="list-unstyled d-flex align-items-center mb-0">
+                    <li class="me-3">
+                        <a class="text-white" href="{% url 'all-posts' %}"
+                            >All Days</a
+                        >
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-light" href="/admin">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="about" class="container p-5 text-center mt-md-3 mb-md-3">
+            <p class="display-4">Django Days</p>
+            <p class="">Django初学者による学習の記録</p>
+        </section>
+        {% block content %} {% endblock content %}
+        <footer class="bg-dark p-3 text-center">
+            <p class="text-white m-0">&copy; 2022 Kengo Hirata</p>
+        </footer>
+        {% block js_files %}
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        {% endblock js_files %}
+    </body>
+</html>

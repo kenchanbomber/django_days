@@ -1,0 +1,8 @@
+a {
+    text-decoration: none;
+}
+
+#about {
+    color: #fff;
+    background: no-repeat center / cover url("../images/programing.jpg");
+}

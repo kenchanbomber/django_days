@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+    #featured-posts .posts-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+    }
+}

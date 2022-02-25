@@ -1,0 +1,79 @@
+{% extends 'layout.html' %} {% load static %} {% block css_files %}
+<link rel="stylesheet" href="{% static 'post/post-detail.css' %}" />
+<link rel="stylesheet" href="{% static 'post/post-item.css' %}" />
+{% endblock css_files %} {% block content %}
+
+<div class="container">
+    <section id="content" class="my-3 row justify-content-between">
+        <main class="col-md-8">
+            <div class="info mb-2">
+                <h1 class="border-bottom display-6 pb-1 fw-bold">Day1</h1>
+                <date class="text-dark">2022.02.25</date>
+            </div>
+            <div>{% lorem 5 b random %}</div>
+        </main>
+        <section id="featured-posts" class="container mt-4 mb-4 m-md-0 col-md-4">
+            <h2 class="mb-2 text-center">Other Days</h2>
+            <div class="posts-list">
+                <div class="card mb-3">
+                    <a
+                        class="post-item d-flex"
+                        href="{% url 'post-detail' 1 %}"
+                    >
+                        <div
+                            class="thumbnail col-3"
+                            style="
+                                background: no-repeat center / cover
+                                    url('{% static 'images/programing.jpg' %}');
+                            "
+                        ></div>
+                        <div class="contents col-9 p-2">
+                            <h3>Day13 - 教材を購入 -</h3>
+                            <date class="text-muted">2022.02.24</date>
+                            <p class="excerpt">動画教材で基礎を学習し...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card mb-3">
+                    <a
+                        class="post-item d-flex"
+                        href="{% url 'post-detail' 1 %}"
+                    >
+                        <div
+                            class="thumbnail col-3"
+                            style="
+                                background: no-repeat center / cover
+                                    url('{% static 'images/programing.jpg' %}');
+                            "
+                        ></div>
+                        <div class="contents col-9 p-2">
+                            <h3>Day13 - 教材を購入 -</h3>
+                            <date>2022.02.24</date>
+                            <p class="excerpt">動画教材で基礎を学習し...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card mb-3">
+                    <a
+                        class="post-item d-flex"
+                        href="{% url 'post-detail' 1 %}"
+                    >
+                        <div
+                            class="thumbnail col-3"
+                            style="
+                                background: no-repeat center / cover
+                                    url('{% static 'images/programing.jpg' %}');
+                            "
+                        ></div>
+                        <div class="contents col-9 p-2">
+                            <h3>Day13 - 教材を購入 -</h3>
+                            <date>2022.02.24</date>
+                            <p class="excerpt">動画教材で基礎を学習し...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+{% endblock content %}
