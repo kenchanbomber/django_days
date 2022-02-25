@@ -132,4 +132,6 @@ dmypy.json
 *.pyc
 db-volumes/
 
+# project-specific
 .vscode
+uploads/
