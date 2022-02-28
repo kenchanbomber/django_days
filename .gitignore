@@ -135,3 +135,4 @@ db-volumes/
 # project-specific
 .vscode
 uploads/
+secret/
