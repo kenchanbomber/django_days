@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from django.views import View
 
@@ -24,9 +25,12 @@ class PostListView(View):
 
 class PostDetailView(View):
     def get(self, request, id):
-        post = Post.objects.get(id=id)
-        other_posts = Post.objects.all()[:3]
-        return render(request, 'post/post-detail.html', {
-            'post': post,
-            'other_posts': other_posts
-        })
+        try:
+            post = Post.objects.get(id=id)
+            other_posts = Post.objects.all()[:3]
+            return render(request, 'post/post-detail.html', {
+                'post': post,
+                'other_posts': other_posts
+            })
+        except:
+            raise Http404()

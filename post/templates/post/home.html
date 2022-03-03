@@ -12,7 +12,7 @@
                         class="thumbnail col-3"
                         style="
                             background: no-repeat center / cover
-                                url('{{ post.image.url }}');
+                                url('{% if post.image %}{{ post.image.url }}{% endif %}');
                         "
                     ></div>
                     <div class="contents col-9 p-2">
