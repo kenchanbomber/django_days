@@ -22,4 +22,3 @@ jobs:
         docker-compose exec web bash
         python manage.py migrate
         python manage.py test
-      
