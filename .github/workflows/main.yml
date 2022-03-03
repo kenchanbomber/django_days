@@ -17,6 +17,6 @@ jobs:
     - name: run test on docker-compose
       run: |
         docker-compose up -d
-        docker-compose exec web bash
+        docker-compose exec -i web bash
         python manage.py migrate
         python manage.py test
