@@ -15,4 +15,4 @@ class PostUrlsTest(TestCase):
 
     def test_be_resolved_all_posts_urls(self):
         view_func = resolve(reverse('all-posts')).func
-        self.assertEqual(view_func.view_class, PostListView)
+        self.assertEqual(view_func.view_class, HomeView)
