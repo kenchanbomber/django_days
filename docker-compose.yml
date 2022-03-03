@@ -24,6 +24,8 @@ services:
       - DB_PORT=5432
       - secret_key=my_secret_key
       - DEBUG=True
+    tty: true
+    stdin_open: true
     depends_on:
       - db
 
