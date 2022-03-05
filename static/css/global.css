@@ -4,5 +4,6 @@ a {
 
 #about {
     color: #fff;
-    background: no-repeat center / cover url("../images/programing.jpg");
+    background: no-repeat center / cover url("../images/be.jpg");
+    filter: grayscale(0.3);
 }
