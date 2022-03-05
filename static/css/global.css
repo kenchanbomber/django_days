@@ -7,3 +7,15 @@ a {
     background: no-repeat center / cover url("../images/be.jpg");
     filter: grayscale(0.3);
 }
+
+.title-en {
+    font-family: "Lobster", cursive;
+}
+
+.title-ja {
+    font-family: "Yusei Magic", sans-serif;
+}
+
+.posts-list {
+    font-family: "Yusei Magic", sans-serif;
+}

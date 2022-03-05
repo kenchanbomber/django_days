@@ -7,13 +7,13 @@
     <section id="content" class="my-3 row justify-content-between">
         <main class="col-md-8">
             <div class="info mb-3 pb-2 border-bottom">
-                <h1 class="display-6 pb-md-1 fw-bold">{{ post.title }}</h1>
-                <date class="text-dark">{{ post.date }}</date>
+                <h1 class="display-6 pb-md-1 fw-bold title-ja">{{ post.title }}</h1>
+                <date class="text-dark title-en">{{ post.date }}</date>
             </div>
             <div class="post-content">{{ post.get_html_from_markdown|safe }}</div>
         </main>
         <section id="featured-posts" class="container mt-4 mb-4 m-md-0 col-md-4">
-            <h2 class="mb-2 text-center">Other Days</h2>
+            <h2 class="title-en mb-2 text-center">Other Adventures</h2>
             <div class="posts-list">
                 {% for post in other_posts %}
                     <div class="card mb-3">
