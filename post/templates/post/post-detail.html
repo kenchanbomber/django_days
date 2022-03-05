@@ -10,7 +10,7 @@
                 <h1 class="display-6 pb-md-1 fw-bold">{{ post.title }}</h1>
                 <date class="text-dark">{{ post.date }}</date>
             </div>
-            <div>{{ post.get_html_from_markdown|safe }}</div>
+            <div class="post-content">{{ post.get_html_from_markdown|safe }}</div>
         </main>
         <section id="featured-posts" class="container mt-4 mb-4 m-md-0 col-md-4">
             <h2 class="mb-2 text-center">Other Days</h2>
@@ -39,5 +39,16 @@
             </div>
         </section>
     </section>
+    {% comment %} <form class="comment-form" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="post_id" value="{{ post.id }}">
+        {% for field in comment_form %}
+            <div class="comment-control">
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button>送信</button>
+    </form> {% endcomment %}
 </div>
 {% endblock content %}
