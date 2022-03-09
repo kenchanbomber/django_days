@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="{% static 'post/post-item.css' %}" />
 {% endblock css_files %} {% block content %}
 
-<section id="about" class="container p-5 text-center mt-md-3 mb-md-3" style="background-image: url('{% if post.image %}{{ post.image.url }}{% endif %}');">
-    <p class="title-ja display-5">かずちゃんの大冒険</p>
-    <p class="title-en">Kazu-chan's great adventures</p>
+<section id="about" class="container p-5 mt-md-3 mb-md-3" style="background-image: url('{% if post.image %}{{ post.image.url }}{% endif %}');">
+    <p class="title-ja display-5">{{ post.title }}</p>
+    <p class="title-en">{{ post.date }}</p>
 </section>
 
 <div class="container">
