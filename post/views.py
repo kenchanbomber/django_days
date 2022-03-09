@@ -36,18 +36,23 @@ class PostDetailView(View):
                 'post': post,
                 'other_posts': other_posts,
                 'comment_form': comment_form,
+                'comments': post.comments.all()
             })
         except:
             raise Http404()
-    
+
     def post(self, request, id):
+        post = Post.objects.get(id=id)
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
-            comment_form.save()
-            return HttpResponseRedirect(reverse('post-detail', request.POST['post_id']))
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return HttpResponseRedirect(reverse('post-detail', args=[id]))
         else:
             return render(request, 'post/post-detail.html', {
-                'post': Post.objects.get(id = request.POST['post_id']),
+                'post': post,
                 'other_posts': Post.objects.all()[:3],
-                'comment_form': comment_form
+                'comment_form': comment_form,
+                'comments': post.comments.all()
             })

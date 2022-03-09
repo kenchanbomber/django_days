@@ -2,11 +2,29 @@
     max-width: 100%;
 }
 
-.comment-form::before {
-    content: "";
+.comment-control label {
+    font-family: "Lobster", cursive;
     display: block;
-    width: 50px;
-    height: 50px;
-    background: center / cover no-repeat url("./images/user-gde89824e2_1280.png");
-    float: left;
+}
+
+.comment-control input, textarea, button {
+    width: 100%;
+}
+
+.comment-body {
+    border-radius: 5px;
+    background-color: #e2e2e2;
+
+    position: relative;
+}
+
+.comment-body::before {
+    content: '';
+    display: block;
+    border: 12px solid transparent;
+    border-bottom: 12px solid #e2e2e2;
+
+    position: absolute;
+    left: 10px;
+    top: -24px;
 }

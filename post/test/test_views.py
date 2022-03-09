@@ -32,6 +32,7 @@ class PostViewsTest(TestCase):
         self.assertEqual(response.context['posts'][0], self.test_post01)
 
     def test_be_rendered_post_detail(self):
+        post = Post.objects.get(id=self.test_post01.id)
         response = self.client.get(
             reverse('post-detail', args=[self.test_post01.id]))
         self.assertEqual(response.status_code, 200)
@@ -39,3 +40,5 @@ class PostViewsTest(TestCase):
         self.assertEqual(response.context['post'], self.test_post01)
         self.assertQuerysetEqual(
             list(response.context['other_posts']), Post.objects.all()[:3], ordered=True)
+        self.assertQuerysetEqual(
+            list(response.context['comments']), post.comments.all(), ordered=True)
