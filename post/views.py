@@ -32,6 +32,9 @@ class PostDetailView(View):
             other_posts = Post.objects.all()[:3]
 
             comment_form = CommentForm()
+            if request.user.is_authenticated:
+                comment_form = CommentForm({'name': request.user.username})
+
             return render(request, 'post/post-detail.html', {
                 'post': post,
                 'other_posts': other_posts,
