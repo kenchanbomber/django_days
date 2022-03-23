@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
@@ -7,6 +8,7 @@ from markdownx.utils import markdownify
 
 
 class Post(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     title = models.CharField(max_length=100)
     date = models.DateTimeField(auto_now=True)
     content = MarkdownxField()
